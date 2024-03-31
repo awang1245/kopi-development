@@ -1,0 +1,67 @@
+{
+  "items": [
+    {
+      "name": "VERDANT",
+      "path": "public/verdant.png",
+      "display": "single origin / peru",
+      "notes": ["bright", "fig", "tea-like"],
+      "price": "24",
+      "roast": "light",
+      "type": "single origin",
+      "origin": "south america",
+      "flavor": ["fruity"]
+    },
+    {
+      "name": "ASTER",
+      "path": "public/aster.png",
+      "display": "seasonal blend",
+      "notes": ["floral", "sweet", "complex"],
+      "price": "22",
+      "roast": "medium",
+      "type": "blend",
+      "flavor": ["floral"]
+    },
+    {
+      "name": "DANDY",
+      "path": "public/dandy.png",
+      "display": "year-round blend",
+      "notes": ["citrus", "honey", "crisp"],
+      "price": "20",
+      "roast": "light",
+      "type": "blend",
+      "flavor": ["citrus"]
+    },
+    {
+      "name": "FUCHSIA",
+      "path": "public/fuchsia.png",
+      "display": "single origin / costa rica",
+      "notes": ["berry", "dark chocolate", "bold"],
+      "price": "24.50",
+      "roast": "dark",
+      "type": "single origin",
+      "origin": "central america",
+      "flavor": ["chocolately", "fruity"]
+    },
+    {
+      "name": "DAYLILY",
+      "path": "public/daylily.png",
+      "display": "year-round blend",
+      "notes": ["orange, cocoa, syrupy"],
+      "price": "20",
+      "roast": "light",
+      "type": "blend",
+      "flavor": ["citrus", "chocolatey"]
+    },
+    {
+      "name": "THISTLE",
+      "path": "public/thistle.png",
+      "display": "single origin / nicaragua",
+      "notes": ["malty", "almond", "sweet"],
+      "price": "24",
+      "roast": "medium",
+      "type": "single origin",
+      "origin": "central america",
+      "flavor": ["nutty"]
+    }
+  ]
+}

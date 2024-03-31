@@ -1,0 +1,77 @@
+.card-back {
+  display: flex;
+  flex-flow: column nowrap;
+  flex: 0 0 calc(100% / 3);
+  border: 1px solid var(--black);
+}
+
+.no-left {
+  border-left: none;
+  flex: 0 0 calc(100% / 3 - 1px);
+}
+
+.no-top {
+  border-top: none;
+}
+
+.item-img {
+  width: 100%;
+}
+
+.card-info {
+  border-top: 1px solid var(--black);
+  padding: 16px;
+  line-height: 1;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 8px;
+}
+
+.info-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 14px;
+}
+
+.name-price {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "FleuronRegular";
+  font-size: 22px;
+  margin-top: 2px;
+}
+
+.buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 4px;
+  gap: 16px;
+
+  button {
+    flex: 1;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+.see-details {
+  background-color: white;
+  color: var(--black);
+  padding: 7px 13px;
+  border: 1px solid var(--black);
+}
+
+.see-details:hover {
+  background-color: var(--black);
+  color: white;
+  padding: 8px 14px;
+  border: none;
+}

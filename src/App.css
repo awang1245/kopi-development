@@ -1,0 +1,110 @@
+#root {
+  width: 100vw;
+  height: 100vh;
+  font-family: Avenir, sans-serif;
+  font-weight: 600;
+}
+
+.site-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--black);
+}
+
+.logo {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  gap: 16px;
+  margin-left: 32px;
+  margin-top: 10px;
+}
+
+.brand-name {
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: 64px;
+  font-family: "FleuronRegular";
+  line-height: 1.1;
+
+  .mixed {
+    font-family: "FleuronMixed";
+  }
+}
+
+.sub-name {
+  line-height: 1.2;
+  font-size: 14px;
+  transform: translateY(-3px);
+}
+
+.nav-bar {
+  font-family: "FleuronRegular";
+  font-size: 20px;
+  width: fit-content;
+  margin-right: 36px;
+}
+
+.nav-links {
+  display: flex;
+  flex-flow: row nowrap;
+  gap: 64px;
+  line-height: 1;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  height: calc(100% - 80px);
+}
+
+.items {
+  width: 75%;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+}
+
+.items-header {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  padding-left: 36px;
+  border-bottom: 1px solid var(--black);
+  font-size: 16px;
+}
+
+.item-listings {
+  padding: 36px;
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  align-content: flex-start;
+  overflow-y: auto;
+}
+
+.cart {
+  width: 25%;
+  height: 100%;
+  border-left: 1px solid var(--black);
+}
+
+.cart-header {
+  height: 56px;
+  border-bottom: 1px solid var(--black);
+  display: flex;
+  align-items: center;
+  padding-left: 36px;
+  font-size: 16px;
+}

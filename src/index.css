@@ -1,0 +1,103 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  --black: #121212;
+  --green: #e3f4e1;
+  --purple: #eceaf6;
+  --yellow: #faedd2;
+  --pink: #f8d1e3;
+  --orange: #fdd9c0;
+  --blue: #d6e0f0;
+
+  color-scheme: light dark;
+  color: var(--black);
+  background-color: white;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: var(--black);
+  text-decoration: inherit;
+}
+a:hover {
+  color: #888888;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  background-color: var(--black);
+  color: white;
+  padding: 8px 14px;
+  font-family: Avenir, sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  border: none;
+}
+
+button:hover {
+  background-color: #4d4d4d;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+@font-face {
+  font-family: FleuronDingbats;
+  font-style: normal;
+  src: url("public/FleuronDingbats.otf") format("opentype");
+}
+
+@font-face {
+  font-family: FleuronMixed;
+  font-style: normal;
+  src: url("public/FleuronMixed.otf") format("opentype");
+}
+
+@font-face {
+  font-family: "FleuronRegular";
+  font-style: normal;
+  src: url("public/FleuronRegular.otf") format("opentype");
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #888888;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
