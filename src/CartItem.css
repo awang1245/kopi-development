@@ -1,0 +1,92 @@
+.cart-item {
+  width: 100%;
+  border-top: 1px solid var(--black);
+  padding: 16px 0px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: start;
+  gap: 16px;
+}
+
+.first {
+  padding-top: 0;
+  border: none;
+}
+
+.square {
+  height: 80px;
+  width: 80px;
+  border: 1px solid var(--black);
+}
+
+.cart-item-info {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  font-size: 12px;
+}
+
+.cart-item-name {
+  line-height: 1;
+  font-size: 16px;
+  font-family: "FleuronRegular";
+}
+
+.cart-info-row {
+  width: 100%;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.item-quantity {
+  display: flex;
+  flex-flow: row nowrap;
+  width: 105px;
+  height: 35px;
+}
+
+.control-button {
+  background-color: var(--black);
+  color: white;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Avenir, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  border: none;
+}
+
+.quantity-display {
+  width: 36px;
+  height: 35px;
+  background-color: white;
+  border: 1px solid var(--black);
+  text-align: center;
+}
+
+.quantity-display::placeholder {
+  color: var(--black);
+  font-family: Avenir, sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.remove-button {
+  background-color: transparent;
+  color: var(--black);
+  font-size: 12px;
+  padding: 0;
+
+  &:hover {
+    background-color: transparent;
+    color: #888888;
+    padding: 0;
+  }
+}

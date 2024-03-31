@@ -20,6 +20,7 @@
   justify-content: space-between;
   align-items: center;
   border-bottom: 1px solid var(--black);
+  background-color: white;
 }
 
 .logo {
@@ -61,6 +62,7 @@
   flex-flow: row nowrap;
   gap: 64px;
   line-height: 1;
+  margin-top: 4px;
 }
 
 .main-content {
@@ -73,16 +75,16 @@
   width: 75%;
   height: 100%;
   display: flex;
-  flex-flow: column;
+  flex-flow: column nowrap;
 }
 
 .items-header {
-  height: 56px;
+  height: 52px;
   display: flex;
   align-items: center;
   padding-left: 36px;
   border-bottom: 1px solid var(--black);
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .item-listings {
@@ -97,14 +99,48 @@
 .cart {
   width: 25%;
   height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
   border-left: 1px solid var(--black);
 }
 
 .cart-header {
-  height: 56px;
+  height: 52px;
   border-bottom: 1px solid var(--black);
   display: flex;
   align-items: center;
   padding-left: 36px;
+  font-size: 18px;
+}
+
+.cart-listings {
+  flex: 1;
+  padding: 36px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  overflow-y: auto;
+}
+
+.cart-total {
+  border-top: 1px solid var(--black);
+  width: 100%;
+  padding: 16px 36px;
+  align-self: flex-end;
+  display: flex;
+  flex-flow: column nowrap;
+  gap: 16px;
+}
+
+.subtotal-row {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "FleuronRegular";
   font-size: 16px;
+}
+
+.checkout-button {
+  width: 100%;
 }

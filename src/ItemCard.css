@@ -18,6 +18,11 @@
   width: 100%;
 }
 
+/* .item-img:hover {
+  transition: 0.3s;
+  filter: brightness(90%);
+} */
+
 .card-info {
   border-top: 1px solid var(--black);
   padding: 16px;
@@ -42,7 +47,7 @@
   align-items: center;
   font-family: "FleuronRegular";
   font-size: 22px;
-  margin-top: 2px;
+  margin-top: 3px;
 }
 
 .buttons {
@@ -70,8 +75,5 @@
 }
 
 .see-details:hover {
-  background-color: var(--black);
-  color: white;
-  padding: 8px 14px;
-  border: none;
+  background-color: #e7e7e7;
 }

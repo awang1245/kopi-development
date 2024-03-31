@@ -9,7 +9,8 @@
       "roast": "light",
       "type": "single origin",
       "origin": "south america",
-      "flavor": ["fruity"]
+      "flavor": ["fruity"],
+      "color": "green"
     },
     {
       "name": "ASTER",
@@ -19,7 +20,8 @@
       "price": "22",
       "roast": "medium",
       "type": "blend",
-      "flavor": ["floral"]
+      "flavor": ["floral"],
+      "color": "purple"
     },
     {
       "name": "DANDY",
@@ -29,7 +31,8 @@
       "price": "20",
       "roast": "light",
       "type": "blend",
-      "flavor": ["citrus"]
+      "flavor": ["citrus"],
+      "color": "yellow"
     },
     {
       "name": "FUCHSIA",
@@ -40,17 +43,19 @@
       "roast": "dark",
       "type": "single origin",
       "origin": "central america",
-      "flavor": ["chocolately", "fruity"]
+      "flavor": ["chocolately", "fruity"],
+      "color": "pink"
     },
     {
       "name": "DAYLILY",
       "path": "public/daylily.png",
       "display": "year-round blend",
-      "notes": ["orange, cocoa, syrupy"],
+      "notes": ["orange", "cocoa", "syrupy"],
       "price": "20",
       "roast": "light",
       "type": "blend",
-      "flavor": ["citrus", "chocolatey"]
+      "flavor": ["citrus", "chocolatey"],
+      "color": "orange"
     },
     {
       "name": "THISTLE",
@@ -61,7 +66,8 @@
       "roast": "medium",
       "type": "single origin",
       "origin": "central america",
-      "flavor": ["nutty"]
+      "flavor": ["nutty"],
+      "color": "blue"
     }
   ]
 }
