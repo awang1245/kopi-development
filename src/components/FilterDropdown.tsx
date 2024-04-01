@@ -1,8 +1,9 @@
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ContextAwareToggle from "./ContextAwareToggle";
+import "../../src/styles/FilterDropdown.css";
 
-// FilterDropDown code is mostly taken directly from the
+// Accordion structure in the FilterDropDown code was written referencing the
 // example on the official Bootstrap Accordion Documentation
 interface FilterDropdownProps {
   onFilterType: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -95,6 +96,7 @@ function FilterDropdown({
                 <div className="category-name">TYPE</div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="type1"
                     name="type1"
@@ -105,6 +107,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="type2"
                     name="type2"
@@ -118,39 +121,43 @@ function FilterDropdown({
                 <div className="category-name">ROAST</div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="roast1"
                     name="roast1"
                     value="light"
                     onChange={onFilterRoast}
                   />
-                  <label htmlFor="type1">light</label>
+                  <label htmlFor="roast1">light</label>
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="roast2"
                     name="roast2"
                     value="medium"
                     onChange={onFilterRoast}
                   />
-                  <label htmlFor="type2">medium</label>
+                  <label htmlFor="roast2">medium</label>
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="roast3"
                     name="roast3"
                     value="dark"
                     onChange={onFilterRoast}
                   />
-                  <label htmlFor="type2">dark</label>
+                  <label htmlFor="roast3">dark</label>
                 </div>
               </div>
               <div className="category">
                 <div className="category-name">FLAVOR</div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="flavor1"
                     name="flavor1"
@@ -161,6 +168,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="flavor2"
                     name="flavor2"
@@ -171,6 +179,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="flavor3"
                     name="flavor3"
@@ -181,6 +190,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="flavor4"
                     name="flavor4"
@@ -191,6 +201,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="flavor5"
                     name="flavor5"
@@ -204,6 +215,7 @@ function FilterDropdown({
                 <div className="category-name">ORIGIN</div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="origin1"
                     name="origin1"
@@ -214,6 +226,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="origin2"
                     name="origin2"
@@ -224,6 +237,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="origin3"
                     name="origin3"
@@ -234,6 +248,7 @@ function FilterDropdown({
                 </div>
                 <div className="option">
                   <input
+                    className="checkbox"
                     type="checkbox"
                     id="origin4"
                     name="origin4"

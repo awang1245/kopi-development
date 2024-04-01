@@ -25,7 +25,8 @@ a {
   color: var(--black);
 }
 
-a:hover {
+a:hover,
+li:hover {
   color: #888888;
 }
 

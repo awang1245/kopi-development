@@ -3,7 +3,7 @@ import ItemCard from "./components/ItemCard";
 import coffeeData from "../src/ItemData.json";
 import { useEffect, useState } from "react";
 import CartItem from "./components/CartItem";
-import FilterDropdown from "./FilterDropdown";
+import FilterDropdown from "./components/FilterDropdown";
 
 export interface ItemData {
   name: string;
@@ -31,41 +31,49 @@ function App() {
   const [roast, setRoast] = useState<string[]>([]);
   const [flavor, setFlavor] = useState<string[]>([]);
   const [origin, setOrigin] = useState<string[]>([]);
-
-  useEffect(() => {
-    console.log(flavor);
-  }, [flavor]);
-
-  useEffect(() => {
-    console.log(origin);
-  }, [origin]);
+  const [displayFilters, setDisplayFilters] = useState<string>("");
 
   useEffect(() => {
     let newDisplayItems: ItemData[] = coffeeData.items;
+    let newDisplayFilter: string = "all coffee";
 
     if (type.length > 0) {
       newDisplayItems = newDisplayItems.filter((item: ItemData) =>
         type.includes(item.type)
       );
     }
+    if (type.length === 1) {
+      newDisplayFilter = type[0];
+    }
+
     if (roast.length > 0) {
       newDisplayItems = newDisplayItems.filter((item: ItemData) =>
         roast.includes(item.roast)
       );
+      roast.map((filter) => {
+        newDisplayFilter = newDisplayFilter + ` / ${filter}`;
+      });
     }
+
     if (flavor.length > 0) {
-      console.log("made it here!");
       newDisplayItems = newDisplayItems.filter((item: ItemData) => {
         return flavor.some((taste) => item.flavor.includes(taste));
       });
-      console.log(newDisplayItems);
+      flavor.map((filter) => {
+        newDisplayFilter = newDisplayFilter + ` / ${filter}`;
+      });
     }
+
     if (origin.length > 0) {
       newDisplayItems = newDisplayItems.filter(
         (item: ItemData) => item.origin && origin.includes(item.origin)
       );
+      origin.map((filter) => {
+        newDisplayFilter = newDisplayFilter + ` / ${filter}`;
+      });
     }
     setDisplayItems(newDisplayItems);
+    setDisplayFilters(newDisplayFilter);
   }, [type, roast, flavor, origin]);
 
   const onRemove = (item: ItemData) => {
@@ -163,6 +171,14 @@ function App() {
     }
   };
 
+  const resetAll = () => {
+    setDisplayItems(coffeeData.items);
+    const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    checkboxes.forEach((box) => {
+      (box as HTMLInputElement).checked = false;
+    });
+  };
+
   return (
     <article className="site-content">
       <header
@@ -201,8 +217,10 @@ function App() {
       <main className="main-content">
         <div className="items">
           <div className="items-header">
-            <div className="items-header-text">all coffee</div>
-            <button className="reset-button">reset all</button>
+            <div className="items-header-text">{displayFilters}</div>
+            <button className="reset-button" onClick={resetAll}>
+              reset all
+            </button>
             <FilterDropdown
               onFilterType={onFilterType}
               onFilterRoast={onFilterRoast}

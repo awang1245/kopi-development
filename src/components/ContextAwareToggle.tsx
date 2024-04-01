@@ -1,7 +1,7 @@
 import { useAccordionButton } from "react-bootstrap/AccordionButton";
 import { useContext } from "react";
 import AccordionContext from "react-bootstrap/esm/AccordionContext";
-import "./styles/FilterDropdown.css";
+import "../../src/styles/FilterDropdown.css";
 
 // ContextAwareToggle code is mostly taken directly from the
 // example on the official Bootstrap Accordion Documentation
