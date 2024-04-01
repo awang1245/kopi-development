@@ -89,19 +89,22 @@
   position: relative;
 
   .items-header-text {
+    max-width: calc(100% - 532px);
+    max-height: 100%;
     padding-left: 36px;
     z-index: 10;
     display: flex;
-    flex-flow: row nowrap;
+    flex-flow: row wrap;
     align-items: center;
     justify-content: start;
+    overflow-y: auto;
   }
 }
 
 .reset-button {
   position: absolute;
   top: 0;
-  right: 350px;
+  right: 420px;
   height: 100%;
   background-color: transparent;
   color: var(--black);
@@ -110,7 +113,7 @@
 
   &:hover {
     background-color: transparent;
-    color: #888888;
+    color: var(--med-grey);
   }
 }
 

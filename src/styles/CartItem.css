@@ -92,6 +92,6 @@
 
   &:hover {
     background-color: transparent;
-    color: #888888;
+    color: var(--med-grey);
   }
 }

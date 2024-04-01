@@ -1,23 +1,27 @@
 import Accordion from "react-bootstrap/Accordion";
 import Card from "react-bootstrap/Card";
 import ContextAwareToggle from "./ContextAwareToggle";
-import "../../src/styles/FilterDropdown.css";
+import "../../src/styles/Dropdown.css";
 
 // Accordion structure in the FilterDropDown code was written referencing the
 // example on the official Bootstrap Accordion Documentation
-interface FilterDropdownProps {
+interface DropdownProps {
   onFilterType: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterRoast: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterFlavor: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterOrigin: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  sort: string;
+  setSort: React.Dispatch<React.SetStateAction<string>>;
 }
 
-function FilterDropdown({
+function Dropdown({
   onFilterType,
   onFilterRoast,
   onFilterFlavor,
   onFilterOrigin,
-}: FilterDropdownProps) {
+  sort,
+  setSort,
+}: DropdownProps) {
   return (
     <>
       <Accordion className="filter-accordion">
@@ -28,6 +32,7 @@ function FilterDropdown({
               callback={(eventKey: string) => {
                 console.log(`Toggle with event key ${eventKey} clicked`);
               }}
+              isFilter={true}
             >
               {/* currentColor keyword wouldn't work if I imported the svg, only when pasting */}
               <svg
@@ -93,6 +98,54 @@ function FilterDropdown({
                 />
               </svg>
               <div>filter by</div>
+            </ContextAwareToggle>
+          </Card.Header>
+          <Card.Header className="sort-header">
+            <ContextAwareToggle
+              eventKey="1"
+              callback={(eventKey: string) => {
+                console.log(`Toggle with event key ${eventKey} clicked`);
+              }}
+              isFilter={false}
+            >
+              {/* currentColor keyword wouldn't work if I imported the svg, only when pasting */}
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                viewBox="0 0 16 16"
+                fill="none"
+              >
+                <rect
+                  x="2"
+                  y="2.5"
+                  width="4"
+                  height="4"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                />
+                <rect
+                  x="2"
+                  y="9"
+                  width="4"
+                  height="4"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                />
+                <path
+                  d="M9.57143 10.5L11.9286 12.8571L14.2857 10.5"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="square"
+                />
+                <path
+                  d="M11.9286 12V2.5"
+                  stroke="currentColor"
+                  strokeWidth="1.4"
+                  strokeLinecap="square"
+                />
+              </svg>
+              <div>{`sort by / ${sort}`}</div>
             </ContextAwareToggle>
           </Card.Header>
           <Accordion.Collapse eventKey="0">
@@ -265,10 +318,54 @@ function FilterDropdown({
               </div>
             </Card.Body>
           </Accordion.Collapse>
+          <Accordion.Collapse eventKey="1">
+            <Card.Body className="sort-body">
+              <div className="category">
+                <button
+                  value="best selling"
+                  onClick={(ev) => setSort(ev.currentTarget.value)}
+                >
+                  best selling
+                </button>
+              </div>
+              <div className="category">
+                <button
+                  value="a / z"
+                  onClick={(ev) => setSort(ev.currentTarget.value)}
+                >
+                  a / z
+                </button>
+              </div>
+              <div className="category">
+                <button
+                  value="z / a"
+                  onClick={(ev) => setSort(ev.currentTarget.value)}
+                >
+                  z / a
+                </button>
+              </div>
+              <div className="category">
+                <button
+                  value="price / high"
+                  onClick={(ev) => setSort(ev.currentTarget.value)}
+                >
+                  price / high
+                </button>
+              </div>
+              <div className="category">
+                <button
+                  value="price / low"
+                  onClick={(ev) => setSort(ev.currentTarget.value)}
+                >
+                  price / low
+                </button>
+              </div>
+            </Card.Body>
+          </Accordion.Collapse>
         </Card>
       </Accordion>
     </>
   );
 }
 
-export default FilterDropdown;
+export default Dropdown;

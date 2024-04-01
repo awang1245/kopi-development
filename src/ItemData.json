@@ -10,29 +10,32 @@
       "type": "single origin",
       "origin": "south america",
       "flavor": ["fruity"],
-      "color": "green"
+      "color": "green",
+      "rank": 1
     },
     {
       "name": "ASTER",
       "path": "/kopi-development/aster.png",
-      "display": "seasonal blend",
+      "display": "year-round blend",
       "notes": ["floral", "sweet", "complex"],
-      "price": "22",
+      "price": "20",
       "roast": "medium",
       "type": "blend",
       "flavor": ["floral"],
-      "color": "purple"
+      "color": "purple",
+      "rank": 2
     },
     {
       "name": "DANDY",
       "path": "/kopi-development/dandy.png",
-      "display": "year-round blend",
+      "display": "seasonal blend",
       "notes": ["citrus", "honey", "crisp"],
-      "price": "20",
+      "price": "22",
       "roast": "light",
       "type": "blend",
       "flavor": ["citrusy"],
-      "color": "yellow"
+      "color": "yellow",
+      "rank": 3
     },
     {
       "name": "FUCHSIA",
@@ -43,8 +46,9 @@
       "roast": "dark",
       "type": "single origin",
       "origin": "central america",
-      "flavor": ["chocolately", "fruity"],
-      "color": "pink"
+      "flavor": ["chocolatey", "fruity"],
+      "color": "pink",
+      "rank": 4
     },
     {
       "name": "DAYLILY",
@@ -52,10 +56,11 @@
       "display": "year-round blend",
       "notes": ["orange", "cocoa", "syrupy"],
       "price": "20",
-      "roast": "light",
+      "roast": "dark",
       "type": "blend",
       "flavor": ["citrusy", "chocolatey"],
-      "color": "orange"
+      "color": "orange",
+      "rank": 5
     },
     {
       "name": "THISTLE",
@@ -67,7 +72,84 @@
       "type": "single origin",
       "origin": "central america",
       "flavor": ["nutty"],
-      "color": "blue"
+      "color": "blue",
+      "rank": 6
+    },
+    {
+      "name": "HEATHER",
+      "path": "/kopi-development/heather.png",
+      "display": "single origin / thailand",
+      "notes": ["plum", "lychee", "delicate"],
+      "price": "27",
+      "roast": "light",
+      "type": "single origin",
+      "origin": "asia",
+      "flavor": ["fruity"],
+      "color": "purple",
+      "rank": 7
+    },
+    {
+      "name": "SORREL",
+      "path": "/kopi-development/sorrel.png",
+      "display": "single origin / colombia",
+      "notes": ["yuzu", "malt", "balanced"],
+      "price": "25.50",
+      "roast": "medium",
+      "type": "single origin",
+      "origin": "south america",
+      "flavor": ["citrusy"],
+      "color": "yellow",
+      "rank": 8
+    },
+    {
+      "name": "SAGE",
+      "path": "/kopi-development/sage.png",
+      "display": "year-round blend",
+      "notes": ["melon", "rich", "silky"],
+      "price": "19.50",
+      "roast": "medium",
+      "type": "blend",
+      "flavor": ["fruity"],
+      "color": "green",
+      "rank": 9
+    },
+    {
+      "name": "INDIGO",
+      "path": "/kopi-development/indigo.png",
+      "display": "single origin / kenya",
+      "notes": ["hazelnut", "tamarind", "deep"],
+      "price": "25",
+      "roast": "dark",
+      "type": "single origin",
+      "origin": "africa",
+      "flavor": ["fruity", "nutty"],
+      "color": "blue",
+      "rank": 10
+    },
+    {
+      "name": "COSMOS",
+      "path": "/kopi-development/cosmos.png",
+      "display": "seasonal blend",
+      "notes": ["tart", "hibiscus", "vibrant"],
+      "price": "21",
+      "roast": "light",
+      "type": "blend",
+      "flavor": ["floral"],
+      "color": "pink",
+      "rank": 11
+    },
+    {
+      "name": "PEACHY",
+      "path": "/kopi-development/peachy.png",
+      "display": "single origin / ethiopia",
+      "notes": ["nectarine", "honey", "juicy"],
+      "price": "25",
+      "roast": "medium",
+      "type": "single origin",
+      "origin": "africa",
+      "flavor": ["fruity"],
+      "color": "orange",
+      "rank": 12
     }
   ]
 }

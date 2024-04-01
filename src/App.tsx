@@ -3,7 +3,7 @@ import ItemCard from "./components/ItemCard";
 import coffeeData from "../src/ItemData.json";
 import { useEffect, useState } from "react";
 import CartItem from "./components/CartItem";
-import FilterDropdown from "./components/FilterDropdown";
+import Dropdown from "./components/Dropdown";
 
 export interface ItemData {
   name: string;
@@ -16,6 +16,7 @@ export interface ItemData {
   origin?: string;
   flavor: string[];
   color: string;
+  rank: number;
 }
 
 function App() {
@@ -31,51 +32,76 @@ function App() {
   const [roast, setRoast] = useState<string[]>([]);
   const [flavor, setFlavor] = useState<string[]>([]);
   const [origin, setOrigin] = useState<string[]>([]);
-  const [displayFilters, setDisplayFilters] = useState<string>("");
+  const [displayFilters, setDisplayFilters] = useState<string>("all coffee");
+  const [sort, setSort] = useState<string>("best selling");
 
   useEffect(() => {
     let newDisplayItems: ItemData[] = coffeeData.items;
     let newDisplayFilter: string = "all coffee";
 
+    // filter any items that have any of the types the user has specified
+    // can be more than one
     if (type.length > 0) {
       newDisplayItems = newDisplayItems.filter((item: ItemData) =>
         type.includes(item.type)
       );
     }
+    // if user picks one type, only display that type, keep displaying "all coffee"
     if (type.length === 1) {
       newDisplayFilter = type[0];
     }
 
+    // filter any items with any of roasts user has selected
     if (roast.length > 0) {
       newDisplayItems = newDisplayItems.filter((item: ItemData) =>
         roast.includes(item.roast)
       );
+      // add any roasts user has picked to the "breadcrumbs"
       roast.map((filter) => {
         newDisplayFilter = newDisplayFilter + ` / ${filter}`;
       });
     }
 
+    // filter any items with any of flavors user has selected
     if (flavor.length > 0) {
       newDisplayItems = newDisplayItems.filter((item: ItemData) => {
         return flavor.some((taste) => item.flavor.includes(taste));
       });
+      // add any flavors user has picked to the "breadcrumbs"
       flavor.map((filter) => {
         newDisplayFilter = newDisplayFilter + ` / ${filter}`;
       });
     }
 
+    // if item is single origin (not blend), then filter any items with origins user has selected
     if (origin.length > 0) {
       newDisplayItems = newDisplayItems.filter(
         (item: ItemData) => item.origin && origin.includes(item.origin)
       );
+      // add any origins user has picked to the "breadcrumbs"
       origin.map((filter) => {
         newDisplayFilter = newDisplayFilter + ` / ${filter}`;
       });
     }
+
+    // sort after filtering to reduce computation, otherwise would be looping over all display items fully twice
+    if (sort === "best selling") {
+      newDisplayItems.sort((a, b) => a.rank - b.rank);
+    } else if (sort === "a / z") {
+      newDisplayItems.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sort === "z / a") {
+      newDisplayItems.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (sort === "price / high") {
+      newDisplayItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    } else if (sort === "price / low") {
+      newDisplayItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    }
+
     setDisplayItems(newDisplayItems);
     setDisplayFilters(newDisplayFilter);
-  }, [type, roast, flavor, origin]);
+  }, [sort, type, roast, flavor, origin]);
 
+  // if user completely removes an item from cart
   const onRemove = (item: ItemData) => {
     const newCartCount = { ...cartCount };
     delete newCartCount[item.name];
@@ -88,6 +114,7 @@ function App() {
     setHeaderColor("");
   };
 
+  // if user clicks quick add once or increments counter in cart
   const addToCart = (item: ItemData) => {
     setCart([...cart, item]);
 
@@ -100,6 +127,7 @@ function App() {
     }));
   };
 
+  // if user decrements counter in cart
   const removeFromCart = (item: ItemData) => {
     const newCart = [...cart];
     const index = cart.findIndex((value: ItemData) => value.name === item.name);
@@ -115,10 +143,12 @@ function App() {
         },
       }));
     } else {
+      // if user decrements cart counter to 0, remove item from cart completely
       onRemove(item);
     }
   };
 
+  // handles selecting and unselecting type filters
   const onFilterType = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
 
@@ -132,6 +162,7 @@ function App() {
     }
   };
 
+  // handles selecting and unselecting roast filters
   const onFilterRoast = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
 
@@ -145,6 +176,7 @@ function App() {
     }
   };
 
+  // handles selecting and unselecting flavor filters
   const onFilterFlavor = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
 
@@ -158,6 +190,7 @@ function App() {
     }
   };
 
+  // handles selecting and unselecting origin filters
   const onFilterOrigin = (event: React.ChangeEvent<HTMLInputElement>) => {
     const { value, checked } = event.target;
 
@@ -171,8 +204,16 @@ function App() {
     }
   };
 
+  // handles resetting any filters selected + unchecking boxes
+  // also resets sort to best selling
   const resetAll = () => {
     setDisplayItems(coffeeData.items);
+    setDisplayFilters("all coffee");
+    setType([]);
+    setRoast([]);
+    setFlavor([]);
+    setOrigin([]);
+    setSort("best selling");
     const checkboxes = document.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach((box) => {
       (box as HTMLInputElement).checked = false;
@@ -221,11 +262,13 @@ function App() {
             <button className="reset-button" onClick={resetAll}>
               reset all
             </button>
-            <FilterDropdown
+            <Dropdown
               onFilterType={onFilterType}
               onFilterRoast={onFilterRoast}
               onFilterFlavor={onFilterFlavor}
               onFilterOrigin={onFilterOrigin}
+              sort={sort}
+              setSort={setSort}
             />
           </div>
           <div className="item-listings">

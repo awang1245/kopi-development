@@ -4,6 +4,7 @@
   font-weight: 400;
 
   --black: #121212;
+  --med-grey: #888888;
   --green: #e3f4e1;
   --purple: #eceaf6;
   --yellow: #faedd2;
@@ -27,7 +28,7 @@ a {
 
 a:hover,
 li:hover {
-  color: #888888;
+  color: var(--med-grey);
 }
 
 body {
