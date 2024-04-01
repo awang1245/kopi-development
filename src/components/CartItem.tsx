@@ -46,7 +46,8 @@ function CartItem({
         <div className="cart-item-info">
           <div className="cart-item-name">{item.name}</div>
           <div className="cart-info-row">
-            <div>{`${12 * quantity} oz`}</div>
+            {/* used to factor quantity into the weight also, but unnecessary */}
+            <div>12 oz</div>
             <div>{`$${quantity * parseInt(item.price)}`}</div>
           </div>
           <div className="cart-info-row">

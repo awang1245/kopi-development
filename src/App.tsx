@@ -36,6 +36,16 @@ function App() {
   const [sort, setSort] = useState<string>("best selling");
 
   useEffect(() => {
+    console.log("sort");
+    console.log(sort);
+    console.log("type");
+    console.log(type);
+    console.log("roast");
+    console.log(roast);
+    console.log("flavor");
+    console.log(flavor);
+    console.log("origin");
+    console.log(origin);
     let newDisplayItems: ItemData[] = coffeeData.items;
     let newDisplayFilter: string = "all coffee";
 
