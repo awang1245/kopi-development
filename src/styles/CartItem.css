@@ -61,6 +61,7 @@
   font-weight: 600;
   font-size: 12px;
   border: none;
+  border-radius: 0;
 }
 
 .quantity-display {
@@ -78,6 +79,11 @@
   font-size: 12px;
 }
 
+.quantity-display:focus,
+.quantity-display:focus-visible {
+  outline: none;
+}
+
 .remove-button {
   background-color: transparent;
   color: var(--black);
@@ -87,6 +93,5 @@
   &:hover {
     background-color: transparent;
     color: #888888;
-    padding: 0;
   }
 }

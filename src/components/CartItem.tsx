@@ -1,10 +1,9 @@
-import "./CartItem.css";
+import "../styles/CartItem.css";
 import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
-import Button from "react-bootstrap/Button";
-import plus from "../public/plus.svg";
-import minus from "../public/minus.svg";
-import { ItemData } from "./App";
+import plus from "../../public/plus.svg";
+import minus from "../../public/minus.svg";
+import { ItemData } from "../App";
 
 interface CartItemProps {
   item: ItemData;
@@ -52,22 +51,24 @@ function CartItem({
           </div>
           <div className="cart-info-row">
             <InputGroup className="item-quantity">
-              <Button
+              <button
                 className="control-button"
                 onClick={() => removeFromCart(item)}
               >
                 <img src={minus} />
-              </Button>
+              </button>
               <Form.Control
                 className="quantity-display"
+                type="text"
                 placeholder={quantity.toString()}
+                readOnly
               />
-              <Button
+              <button
                 className="control-button"
                 onClick={() => addToCart(item)}
               >
                 <img src={plus} />
-              </Button>
+              </button>
             </InputGroup>
             <button className="remove-button" onClick={() => onRemove(item)}>
               remove

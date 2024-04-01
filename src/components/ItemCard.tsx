@@ -1,7 +1,7 @@
-import "./ItemCard.css";
-import plus from "../public/plus.svg";
-import arrow from "../public/arrow.svg";
-import { ItemData } from "./App";
+import "../styles/ItemCard.css";
+import plus from "../../public/plus.svg";
+import arrow from "../../public/arrow.svg";
+import { ItemData } from "../App";
 
 interface ItemCardProps {
   item: ItemData;

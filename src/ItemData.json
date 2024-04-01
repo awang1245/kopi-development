@@ -31,7 +31,7 @@
       "price": "20",
       "roast": "light",
       "type": "blend",
-      "flavor": ["citrus"],
+      "flavor": ["citrusy"],
       "color": "yellow"
     },
     {
@@ -54,7 +54,7 @@
       "price": "20",
       "roast": "light",
       "type": "blend",
-      "flavor": ["citrus", "chocolatey"],
+      "flavor": ["citrusy", "chocolatey"],
       "color": "orange"
     },
     {
