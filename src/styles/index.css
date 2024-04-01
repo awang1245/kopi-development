@@ -91,16 +91,3 @@ button:focus-visible {
   font-style: normal;
   src: url("/kopi-development/FleuronRegular.otf") format("opentype");
 }
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #888888;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
