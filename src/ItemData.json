@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "VERDANT",
-      "path": "/kopi-development/verdant.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / peru",
       "notes": ["bright", "fig", "tea-like"],
       "price": "24",
@@ -15,7 +15,7 @@
     },
     {
       "name": "ASTER",
-      "path": "/kopi-development/aster.png",
+      "path": "/kopi-development/test.png",
       "display": "year-round blend",
       "notes": ["floral", "sweet", "complex"],
       "price": "20",
@@ -27,7 +27,7 @@
     },
     {
       "name": "DANDY",
-      "path": "/kopi-development/dandy.png",
+      "path": "/kopi-development/test.png",
       "display": "seasonal blend",
       "notes": ["citrus", "honey", "crisp"],
       "price": "22",
@@ -39,7 +39,7 @@
     },
     {
       "name": "FUCHSIA",
-      "path": "/kopi-development/fuchsia.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / costa rica",
       "notes": ["berry", "dark chocolate", "bold"],
       "price": "24.50",
@@ -52,7 +52,7 @@
     },
     {
       "name": "DAYLILY",
-      "path": "/kopi-development/daylily.png",
+      "path": "/kopi-development/test.png",
       "display": "year-round blend",
       "notes": ["orange", "cocoa", "syrupy"],
       "price": "20",
@@ -64,7 +64,7 @@
     },
     {
       "name": "THISTLE",
-      "path": "/kopi-development/thistle.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / nicaragua",
       "notes": ["malty", "almond", "sweet"],
       "price": "24",
@@ -77,7 +77,7 @@
     },
     {
       "name": "HEATHER",
-      "path": "/kopi-development/heather.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / thailand",
       "notes": ["plum", "lychee", "delicate"],
       "price": "27",
@@ -90,7 +90,7 @@
     },
     {
       "name": "SORREL",
-      "path": "/kopi-development/sorrel.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / colombia",
       "notes": ["yuzu", "malt", "balanced"],
       "price": "25.50",
@@ -103,7 +103,7 @@
     },
     {
       "name": "SAGE",
-      "path": "/kopi-development/sage.png",
+      "path": "/kopi-development/test.png",
       "display": "year-round blend",
       "notes": ["melon", "rich", "silky"],
       "price": "19.50",
@@ -115,7 +115,7 @@
     },
     {
       "name": "INDIGO",
-      "path": "/kopi-development/indigo.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / kenya",
       "notes": ["hazelnut", "tamarind", "deep"],
       "price": "25",
@@ -128,7 +128,7 @@
     },
     {
       "name": "COSMOS",
-      "path": "/kopi-development/cosmos.png",
+      "path": "/kopi-development/test.png",
       "display": "seasonal blend",
       "notes": ["tart", "hibiscus", "vibrant"],
       "price": "21",
@@ -140,7 +140,7 @@
     },
     {
       "name": "PEACHY",
-      "path": "/kopi-development/peachy.png",
+      "path": "/kopi-development/test.png",
       "display": "single origin / ethiopia",
       "notes": ["nectarine", "honey", "juicy"],
       "price": "25",

@@ -96,15 +96,23 @@ function App() {
 
     // sort after filtering to reduce computation, otherwise would be looping over all display items fully twice
     if (sort === "best selling") {
-      newDisplayItems.sort((a, b) => a.rank - b.rank);
+      newDisplayItems = newDisplayItems.sort((a, b) => a.rank - b.rank);
     } else if (sort === "a / z") {
-      newDisplayItems.sort((a, b) => a.name.localeCompare(b.name));
+      newDisplayItems = newDisplayItems.sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
     } else if (sort === "z / a") {
-      newDisplayItems.sort((a, b) => b.name.localeCompare(a.name));
+      newDisplayItems = newDisplayItems.sort((a, b) =>
+        b.name.localeCompare(a.name)
+      );
     } else if (sort === "price / high") {
-      newDisplayItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+      newDisplayItems = newDisplayItems.sort(
+        (a, b) => parseFloat(b.price) - parseFloat(a.price)
+      );
     } else if (sort === "price / low") {
-      newDisplayItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+      newDisplayItems = newDisplayItems.sort(
+        (a, b) => parseFloat(a.price) - parseFloat(b.price)
+      );
     }
 
     setDisplayItems(newDisplayItems);
