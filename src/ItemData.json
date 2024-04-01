@@ -2,7 +2,7 @@
   "items": [
     {
       "name": "VERDANT",
-      "path": "public/verdant.png",
+      "path": "/kopi-development/verdant.png",
       "display": "single origin / peru",
       "notes": ["bright", "fig", "tea-like"],
       "price": "24",
@@ -14,7 +14,7 @@
     },
     {
       "name": "ASTER",
-      "path": "public/aster.png",
+      "path": "/kopi-development/public/aster.png",
       "display": "seasonal blend",
       "notes": ["floral", "sweet", "complex"],
       "price": "22",

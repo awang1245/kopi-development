@@ -74,22 +74,22 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-@font-face {
+/* @font-face {
   font-family: FleuronDingbats;
   font-style: normal;
   src: url("public/FleuronDingbats.otf") format("opentype");
-}
+} */
 
 @font-face {
   font-family: FleuronMixed;
   font-style: normal;
-  src: url("public/FleuronMixed.otf") format("opentype");
+  src: url("/kopi-development/FleuronMixed.otf") format("opentype");
 }
 
 @font-face {
-  font-family: "FleuronRegular";
+  font-family: FleuronRegular;
   font-style: normal;
-  src: url("public/FleuronRegular.otf") format("opentype");
+  src: url("/kopi-development/FleuronRegular.otf") format("opentype");
 }
 
 @media (prefers-color-scheme: light) {
