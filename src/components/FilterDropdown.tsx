@@ -23,7 +23,12 @@ function FilterDropdown({
       <Accordion className="filter-accordion">
         <Card className="filter-card">
           <Card.Header className="filter-header">
-            <ContextAwareToggle eventKey="0" callback={undefined}>
+            <ContextAwareToggle
+              eventKey="0"
+              callback={(eventKey: string) => {
+                console.log(`Toggle with event key ${eventKey} clicked`);
+              }}
+            >
               {/* currentColor keyword wouldn't work if I imported the svg, only when pasting */}
               <svg
                 xmlns="http://www.w3.org/2000/svg"
