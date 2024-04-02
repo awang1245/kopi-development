@@ -8,6 +8,7 @@ interface DropdownProps {
   onFilterRoast: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterFlavor: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterOrigin: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  type: string[];
   sort: string;
   onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
@@ -17,6 +18,7 @@ function Dropdown({
   onFilterRoast,
   onFilterFlavor,
   onFilterOrigin,
+  type,
   sort,
   onSort,
 }: DropdownProps) {
@@ -277,6 +279,7 @@ function Dropdown({
                     name="origin1"
                     value="africa"
                     onChange={onFilterOrigin}
+                    disabled={type.length === 1 && type[0] === "blend"}
                   />
                   <label htmlFor="origin1">africa</label>
                 </div>
@@ -288,6 +291,7 @@ function Dropdown({
                     name="origin2"
                     value="asia"
                     onChange={onFilterOrigin}
+                    disabled={type.length === 1 && type[0] === "blend"}
                   />
                   <label htmlFor="origin2">asia</label>
                 </div>
@@ -299,6 +303,7 @@ function Dropdown({
                     name="origin3"
                     value="central america"
                     onChange={onFilterOrigin}
+                    disabled={type.length === 1 && type[0] === "blend"}
                   />
                   <label htmlFor="origin3">central america</label>
                 </div>
@@ -310,6 +315,7 @@ function Dropdown({
                     name="origin4"
                     value="south america"
                     onChange={onFilterOrigin}
+                    disabled={type.length === 1 && type[0] === "blend"}
                   />
                   <label htmlFor="origin4">south america</label>
                 </div>

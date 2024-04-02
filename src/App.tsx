@@ -287,6 +287,7 @@ function App() {
               onFilterRoast={onFilterRoast}
               onFilterFlavor={onFilterFlavor}
               onFilterOrigin={onFilterOrigin}
+              type={type}
               sort={sort}
               onSort={onSort}
             />
