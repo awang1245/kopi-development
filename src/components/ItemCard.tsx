@@ -28,11 +28,7 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <img
-          className="item-img"
-          src={item.path}
-          alt={`image of ${item.name}`}
-        />
+        <img className="item-img" src={item.path} alt={item.name} />
         <div className="card-info">
           <div className="info-row">
             <div>{item.display}</div>
