@@ -273,9 +273,15 @@ function App() {
         <div className="items">
           <div className="items-header">
             <div className="items-header-text">{displayFilters}</div>
-            <button className="reset-button" onClick={resetAll}>
-              reset all
-            </button>
+            {(type.length !== 0 ||
+              roast.length !== 0 ||
+              flavor.length !== 0 ||
+              origin.length !== 0 ||
+              sort != "best selling") && (
+              <button className="reset-button" onClick={resetAll}>
+                reset all
+              </button>
+            )}
             <Dropdown
               onFilterType={onFilterType}
               onFilterRoast={onFilterRoast}
