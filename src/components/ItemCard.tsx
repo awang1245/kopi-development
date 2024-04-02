@@ -31,7 +31,7 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
         <img
           className="item-img"
           src={item.path}
-          alt={`image of the ${item.name} coffee packaging`}
+          alt={`image of coffee packaging`}
         />
         <div className="card-info">
           <div className="info-row">
