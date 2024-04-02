@@ -11,6 +11,8 @@ interface ItemCardProps {
 }
 
 function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
+  console.log("item card #" + index);
+  console.log(item);
   const onMouseEnter = () => {
     setHeaderColor(item.color);
   };

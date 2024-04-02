@@ -3,15 +3,13 @@ import Card from "react-bootstrap/Card";
 import ContextAwareToggle from "./ContextAwareToggle";
 import "../../src/styles/Dropdown.css";
 
-// Accordion structure in the FilterDropDown code was written referencing the
-// example on the official Bootstrap Accordion Documentation
 interface DropdownProps {
   onFilterType: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterRoast: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterFlavor: (event: React.ChangeEvent<HTMLInputElement>) => void;
   onFilterOrigin: (event: React.ChangeEvent<HTMLInputElement>) => void;
   sort: string;
-  setSort: React.Dispatch<React.SetStateAction<string>>;
+  onSort: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
 function Dropdown({
@@ -20,7 +18,7 @@ function Dropdown({
   onFilterFlavor,
   onFilterOrigin,
   sort,
-  setSort,
+  onSort,
 }: DropdownProps) {
   return (
     <>
@@ -321,42 +319,27 @@ function Dropdown({
           <Accordion.Collapse eventKey="1">
             <Card.Body className="sort-body">
               <div className="category">
-                <button
-                  value="best selling"
-                  onClick={(ev) => setSort(ev.currentTarget.value)}
-                >
+                <button value="best selling" onClick={onSort}>
                   best selling
                 </button>
               </div>
               <div className="category">
-                <button
-                  value="a / z"
-                  onClick={(ev) => setSort(ev.currentTarget.value)}
-                >
+                <button value="a / z" onClick={onSort}>
                   a / z
                 </button>
               </div>
               <div className="category">
-                <button
-                  value="z / a"
-                  onClick={(ev) => setSort(ev.currentTarget.value)}
-                >
+                <button value="z / a" onClick={onSort}>
                   z / a
                 </button>
               </div>
               <div className="category">
-                <button
-                  value="price / high"
-                  onClick={(ev) => setSort(ev.currentTarget.value)}
-                >
+                <button value="price / high" onClick={onSort}>
                   price / high
                 </button>
               </div>
               <div className="category">
-                <button
-                  value="price / low"
-                  onClick={(ev) => setSort(ev.currentTarget.value)}
-                >
+                <button value="price / low" onClick={onSort}>
                   price / low
                 </button>
               </div>

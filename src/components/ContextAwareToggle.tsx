@@ -3,7 +3,7 @@ import { ReactNode, useContext } from "react";
 import AccordionContext from "react-bootstrap/esm/AccordionContext";
 import "../../src/styles/Dropdown.css";
 
-// ContextAwareToggle code is mostly taken directly from the
+// ContextAwareToggle code is written referencing the
 // example on the official Bootstrap Accordion Documentation
 interface ContextAwareToggleProps {
   children: ReactNode;

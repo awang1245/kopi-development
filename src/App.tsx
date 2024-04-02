@@ -36,17 +36,7 @@ function App() {
   const [sort, setSort] = useState<string>("best selling");
 
   useEffect(() => {
-    console.log("sort");
-    console.log(sort);
-    console.log("type");
-    console.log(type);
-    console.log("roast");
-    console.log(roast);
-    console.log("flavor");
-    console.log(flavor);
-    console.log("origin");
-    console.log(origin);
-    let newDisplayItems: ItemData[] = coffeeData.items;
+    let newDisplayItems: ItemData[] = [...coffeeData.items];
     let newDisplayFilter: string = "all coffee";
 
     // filter any items that have any of the types the user has specified
@@ -94,30 +84,31 @@ function App() {
       });
     }
 
-    // sort after filtering to reduce computation, otherwise would be looping over all display items fully twice
-    if (sort === "best selling") {
-      newDisplayItems = newDisplayItems.sort((a, b) => a.rank - b.rank);
-    } else if (sort === "a / z") {
-      newDisplayItems = newDisplayItems.sort((a, b) =>
-        a.name.localeCompare(b.name)
-      );
-    } else if (sort === "z / a") {
-      newDisplayItems = newDisplayItems.sort((a, b) =>
-        b.name.localeCompare(a.name)
-      );
-    } else if (sort === "price / high") {
-      newDisplayItems = newDisplayItems.sort(
-        (a, b) => parseFloat(b.price) - parseFloat(a.price)
-      );
-    } else if (sort === "price / low") {
-      newDisplayItems = newDisplayItems.sort(
-        (a, b) => parseFloat(a.price) - parseFloat(b.price)
-      );
-    }
+    // feed filtered newDisplayItems into sorting function to get sorted
+    newDisplayItems = applySort(newDisplayItems);
 
     setDisplayItems(newDisplayItems);
     setDisplayFilters(newDisplayFilter);
   }, [sort, type, roast, flavor, origin]);
+
+  // factors out code and updates newDisplayItems with a sorted version
+  const applySort = (items: ItemData[]) => {
+    let sortedItems = [...items];
+
+    if (sort === "best selling") {
+      sortedItems.sort((a, b) => a.rank - b.rank);
+    } else if (sort === "a / z") {
+      sortedItems.sort((a, b) => a.name.localeCompare(b.name));
+    } else if (sort === "z / a") {
+      sortedItems.sort((a, b) => b.name.localeCompare(a.name));
+    } else if (sort === "price / high") {
+      sortedItems.sort((a, b) => parseFloat(b.price) - parseFloat(a.price));
+    } else if (sort === "price / low") {
+      sortedItems.sort((a, b) => parseFloat(a.price) - parseFloat(b.price));
+    }
+
+    return sortedItems;
+  };
 
   // if user completely removes an item from cart
   const onRemove = (item: ItemData) => {
@@ -222,6 +213,11 @@ function App() {
     }
   };
 
+  const onSort = (event: React.MouseEvent<HTMLButtonElement>) => {
+    const value = event.currentTarget.value;
+    setSort(value);
+  };
+
   // handles resetting any filters selected + unchecking boxes
   // also resets sort to best selling
   const resetAll = () => {
@@ -286,7 +282,7 @@ function App() {
               onFilterFlavor={onFilterFlavor}
               onFilterOrigin={onFilterOrigin}
               sort={sort}
-              setSort={setSort}
+              onSort={onSort}
             />
           </div>
           <div className="item-listings">
