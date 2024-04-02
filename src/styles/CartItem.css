@@ -45,6 +45,7 @@
 .item-quantity {
   display: flex;
   flex-flow: row nowrap;
+  justify-content: start;
   width: 105px;
   height: 35px;
 }

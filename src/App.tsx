@@ -329,13 +329,22 @@ function App() {
             <div className="subtotal-row">
               <div>SUBTOTAL</div>
               <div>
-                {"$"}
-                {cart
-                  .reduce(
-                    (currTotal, item) => currTotal + parseFloat(item.price),
-                    0
-                  )
-                  .toFixed(2)}
+                {cart.reduce(
+                  (currTotal, item) => currTotal + parseFloat(item.price),
+                  0
+                ) %
+                  1 ===
+                0.5
+                  ? `$${cart
+                      .reduce(
+                        (currTotal, item) => currTotal + parseFloat(item.price),
+                        0
+                      )
+                      .toFixed(2)}`
+                  : `$${cart.reduce(
+                      (currTotal, item) => currTotal + parseFloat(item.price),
+                      0
+                    )}`}
               </div>
             </div>
             <button className="checkout-button">checkout</button>
