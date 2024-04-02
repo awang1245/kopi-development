@@ -56,7 +56,7 @@ function CartItem({
                 className="control-button"
                 onClick={() => removeFromCart(item)}
               >
-                <img src={minus} />
+                <img src={minus} alt="subtract icon" />
               </button>
               <Form.Control
                 className="quantity-display"
@@ -68,7 +68,7 @@ function CartItem({
                 className="control-button"
                 onClick={() => addToCart(item)}
               >
-                <img src={plus} />
+                <img src={plus} alt="add icon" />
               </button>
             </InputGroup>
             <button className="remove-button" onClick={() => onRemove(item)}>

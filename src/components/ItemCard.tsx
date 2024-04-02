@@ -28,7 +28,11 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
-        <img className="item-img" src={item.path} />
+        <img
+          className="item-img"
+          src={item.path}
+          alt={`image of the ${item.name} coffee packaging`}
+        />
         <div className="card-info">
           <div className="info-row">
             <div>{item.display}</div>
@@ -45,11 +49,11 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
           <div className="buttons">
             <button onClick={() => addToCart(item)}>
               <div>quick add</div>
-              <img src={plus} />
+              <img src={plus} alt="add icon" />
             </button>
             <button className="see-details">
               <div>see details</div>
-              <img src={arrow} />
+              <img src={arrow} alt="arrow icon" />
             </button>
           </div>
         </div>
