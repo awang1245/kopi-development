@@ -124,6 +124,11 @@
   flex-flow: row wrap;
   align-content: flex-start;
   overflow-y: auto;
+
+  .error-text {
+    width: 100%;
+    text-align: center;
+  }
 }
 
 ::-webkit-scrollbar {

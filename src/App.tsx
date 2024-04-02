@@ -286,6 +286,11 @@ function App() {
             />
           </div>
           <div className="item-listings">
+            {displayItems.length === 0 && (
+              <div className="error-text">
+                no items match your filtering criteria
+              </div>
+            )}
             {displayItems.map((item, index) => (
               <ItemCard
                 item={item}
