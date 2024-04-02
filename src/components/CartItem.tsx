@@ -48,7 +48,7 @@ function CartItem({
           <div className="cart-info-row">
             {/* used to factor quantity into the weight also, but unnecessary */}
             <div>12 oz</div>
-            <div>{`$${quantity * parseInt(item.price)}`}</div>
+            <div>{`$${quantity * parseFloat(item.price)}`}</div>
           </div>
           <div className="cart-info-row">
             <InputGroup className="item-quantity">

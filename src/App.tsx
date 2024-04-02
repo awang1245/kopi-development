@@ -332,7 +332,7 @@ function App() {
                 {"$"}
                 {cart
                   .reduce(
-                    (currTotal, item) => currTotal + parseInt(item.price),
+                    (currTotal, item) => currTotal + parseFloat(item.price),
                     0
                   )
                   .toFixed(2)}
