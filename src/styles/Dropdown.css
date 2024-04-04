@@ -83,6 +83,31 @@
   justify-content: start;
 }
 
+.filter-accordion label {
+  font-size: 16px;
+}
+
+@media (max-width: 888px) {
+  .category {
+    gap: 8px;
+
+    button {
+      font-size: 14px;
+    }
+  }
+  .option {
+    gap: 8px;
+    align-items: start;
+  }
+
+  .filter-accordion label {
+    display: flex;
+    flex-flow: row wrap;
+    line-height: 1;
+    font-size: 14px;
+  }
+}
+
 .filter-button {
   font-size: 16px;
   height: 51px;
@@ -123,7 +148,4 @@
 
 input[disabled] {
   outline: white;
-}
-.filter-accordion label {
-  font-size: 16px;
 }

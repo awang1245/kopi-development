@@ -101,6 +101,12 @@
   }
 }
 
+@media (max-width: 956px) {
+  .items-header .items-header-text {
+    display: none;
+  }
+}
+
 .reset-button {
   position: absolute;
   top: 0;
@@ -133,6 +139,7 @@
 }
 
 .cart {
+  min-width: 320px;
   width: 25%;
   height: 100%;
   display: flex;

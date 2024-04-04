@@ -13,11 +13,24 @@ interface ItemCardProps {
 
 function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
   const [smallScreen, setSmallScreen] = useState<boolean>(false);
+  const [medScreen, setMedScreen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const detectMed = () => {
+      setMedScreen(window.innerWidth <= 1240 && window.innerWidth > 888);
+    };
+
+    detectMed();
+    window.addEventListener("resize", detectMed);
+
+    return () => {
+      window.removeEventListener("resize", detectMed);
+    };
+  });
 
   useEffect(() => {
     const detectSmall = () => {
-      setSmallScreen(window.innerWidth <= 1056);
-      // setSmallScreen(window.innerWidth <= 920);
+      setSmallScreen(window.innerWidth <= 888);
     };
 
     detectSmall();
@@ -41,6 +54,8 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
       <div
         className={
           smallScreen
+            ? `card-back ${index > 0 ? "no-top" : ""}`
+            : medScreen
             ? `card-back ${index % 2 !== 0 ? "no-left" : ""} ${
                 index > 1 ? "no-top" : ""
               }`
@@ -48,9 +63,6 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
                 index > 2 ? "no-top" : ""
               }`
         }
-        // className={`card-back ${index % 3 !== 0 ? "no-left" : ""} ${
-        //   index > 2 ? "no-top" : ""
-        // }`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >
@@ -58,15 +70,19 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
         <div className="card-info">
           <div className="info-row">
             <div>{item.display}</div>
-            <div>{`${item.roast} roast`}</div>
+            <div className="large-screen-roast">{`${item.roast} roast`}</div>
           </div>
           <div className="name-price">
             <div>{item.name}</div>
             <div>{`$${item.price}`}</div>
           </div>
+          <div className="small-screen-roast-row">
+            <div>roast</div>
+            <div>{item.roast}</div>
+          </div>
           <div className="info-row">
             <div>notes</div>
-            <div>{`${item.notes[0]}, ${item.notes[1]}, ${item.notes[2]}`}</div>
+            <div className="item-notes">{`${item.notes[0]}, ${item.notes[1]}, ${item.notes[2]}`}</div>
           </div>
           <div className="buttons">
             <button onClick={() => addToCart(item)}>

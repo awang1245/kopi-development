@@ -1,33 +1,60 @@
 .card-back {
   display: flex;
   flex-flow: column nowrap;
-  flex: 0 0 calc(100% / 3);
   border: 1px solid var(--black);
 }
 
-@media (max-width: 1250px) {
-  .square {
-    display: none;
+@media (min-width: 1240px) {
+  .card-back {
+    flex: 0 0 calc(100% / 3);
+  }
+
+  .no-left {
+    flex: 0 0 calc(100% / 3 - 1px);
   }
 }
 
-/* saving for another time to make the site more responsive */
-@media (max-width: 1056px) {
-  /* @media (max-width: 920px) { */
+@media (max-width: 1240px) {
   .card-back {
-    /* flex: 0 0 30%; */
     flex: 0 0 50%;
   }
 
   .no-left {
-    border-left: none;
     flex: 0 0 calc(50% - 1px);
+  }
+}
+
+@media (max-width: 952px) and (min-width: 888px) {
+  .buttons .see-details {
+    display: none;
+  }
+
+  .card-info .large-screen-roast {
+    display: none;
+  }
+
+  .card-info .small-screen-roast-row {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+  }
+
+  .item-notes {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+
+@media (max-width: 888px) {
+  .card-back {
+    flex: 0 0 100%;
   }
 }
 
 .no-left {
   border-left: none;
-  flex: 0 0 calc(100% / 3 - 1px);
 }
 
 .no-top {
@@ -53,11 +80,15 @@
 }
 
 .info-row {
-  /* display: flex;
+  display: flex;
   flex-flow: row nowrap;
   justify-content: space-between;
   align-items: center;
-  font-size: 14px; */
+  font-size: 14px;
+}
+
+.small-screen-roast-row {
+  display: none;
 }
 
 .name-price {
