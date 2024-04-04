@@ -12,9 +12,11 @@
 }
 
 /* saving for another time to make the site more responsive */
-@media (max-width: 920px) {
+@media (max-width: 1056px) {
+  /* @media (max-width: 920px) { */
   .card-back {
-    flex: 0 0 30%;
+    /* flex: 0 0 30%; */
+    flex: 0 0 50%;
   }
 
   .no-left {

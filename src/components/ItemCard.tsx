@@ -16,7 +16,8 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
 
   useEffect(() => {
     const detectSmall = () => {
-      setSmallScreen(window.innerWidth <= 920);
+      setSmallScreen(window.innerWidth <= 1056);
+      // setSmallScreen(window.innerWidth <= 920);
     };
 
     detectSmall();
