@@ -2,6 +2,7 @@ import "../styles/ItemCard.css";
 import plus from "../../public/plus.svg";
 import arrow from "../../public/arrow.svg";
 import { ItemData } from "../App";
+import { useEffect, useState } from "react";
 
 interface ItemCardProps {
   item: ItemData;
@@ -11,6 +12,21 @@ interface ItemCardProps {
 }
 
 function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
+  const [smallScreen, setSmallScreen] = useState<boolean>(false);
+
+  useEffect(() => {
+    const detectSmall = () => {
+      setSmallScreen(window.innerWidth <= 920);
+    };
+
+    detectSmall();
+    window.addEventListener("resize", detectSmall);
+
+    return () => {
+      window.removeEventListener("resize", detectSmall);
+    };
+  });
+
   const onMouseEnter = () => {
     setHeaderColor(item.color);
   };
@@ -22,9 +38,18 @@ function ItemCard({ item, index, setHeaderColor, addToCart }: ItemCardProps) {
   return (
     <>
       <div
-        className={`card-back ${index % 3 !== 0 ? "no-left" : ""} ${
-          index > 2 ? "no-top" : ""
-        }`}
+        className={
+          smallScreen
+            ? `card-back ${index % 2 !== 0 ? "no-left" : ""} ${
+                index > 1 ? "no-top" : ""
+              }`
+            : `card-back ${index % 3 !== 0 ? "no-left" : ""} ${
+                index > 2 ? "no-top" : ""
+              }`
+        }
+        // className={`card-back ${index % 3 !== 0 ? "no-left" : ""} ${
+        //   index > 2 ? "no-top" : ""
+        // }`}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
       >

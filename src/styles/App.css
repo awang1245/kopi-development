@@ -112,6 +112,7 @@
   z-index: 10;
 
   &:hover {
+    transition: 0.3s;
     background-color: transparent;
     color: var(--med-grey);
   }
@@ -129,27 +130,6 @@
     width: 100%;
     text-align: center;
   }
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: white;
-}
-
-::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 10px;
-}
-
-div:hover::-webkit-scrollbar-thumb {
-  background: #e7e7e7;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #e7e7e7;
 }
 
 .cart {
