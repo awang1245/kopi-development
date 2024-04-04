@@ -87,7 +87,19 @@
   font-size: 16px;
 }
 
-@media (max-width: 888px) {
+@media (max-width: 936px) {
+  .filter-body {
+    flex-flow: row wrap;
+    justify-content: start;
+    gap: 36px;
+  }
+
+  .sort-body {
+    flex-flow: row wrap;
+    justify-content: start;
+    gap: 16px 36px;
+  }
+
   .category {
     gap: 8px;
 
@@ -101,10 +113,8 @@
   }
 
   .filter-accordion label {
-    display: flex;
-    flex-flow: row wrap;
-    line-height: 1;
     font-size: 14px;
+    line-height: 1;
   }
 }
 
