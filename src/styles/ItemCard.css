@@ -4,6 +4,13 @@
   border: 1px solid var(--black);
 }
 
+/* .card-back:hover {
+  .item-img {
+    transition: 0.3s;
+    filter: brightness(95%);
+  }
+} */
+
 @media (min-width: 1240px) {
   .card-back {
     flex: 0 0 calc(100% / 3);
@@ -64,11 +71,6 @@
 .item-img {
   width: 100%;
 }
-
-/* .item-img:hover {
-  transition: 0.3s;
-  filter: brightness(90%);
-} */
 
 .card-info {
   border-top: 1px solid var(--black);
