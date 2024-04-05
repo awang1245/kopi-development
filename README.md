@@ -15,12 +15,24 @@ Learn more about the project: https://awang1245.github.io/anna-wang-portfolio/#/
 git clone https://github.com/awang1245/kopi-development.git
 ```
 
-3. Navigate into the project directory  
-`cd src`
-5. Install all dependencies  
-`npm install`
-7. Run the application  
-`npm run dev`
+3. Navigate into the project directory
+
+```
+cd src
+```
+
+5. Install all dependencies
+
+```
+npm install
+```
+
+7. Run the application
+
+```
+npm run dev
+```
+
 9. Go to http://localhost:5174/kopi-development/ to view the site
 
 ## Bugs
