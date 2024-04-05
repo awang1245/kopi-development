@@ -4,7 +4,7 @@
 
 In this project, I designed and developed a website for an imaginary coffee brand, Kopi Organic Roastery. The goal was to create an interactive list-based interface where users are able to select and aggregate items. Users are able to browse, filter, and sort through Kopi's signature coffee offerings and add them to cart.
 
-Visit the deployed website: https://awang1245.github.io/kopi-development/
+Visit the deployed website: https://awang1245.github.io/kopi-development/  
 Learn more about the project: https://awang1245.github.io/anna-wang-portfolio/#/kopi-development
 
 ## How to Run Program Locally
