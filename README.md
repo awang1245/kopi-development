@@ -9,15 +9,15 @@ Learn more about the project: https://awang1245.github.io/anna-wang-portfolio/#/
 
 ## How to Run Program Locally
 
-1. Clone the repository
+1. Clone the repository  
 `git clone https://github.com/awang1245/kopi-development.git`
-2. Navigate into the project directory
+3. Navigate into the project directory  
 `cd src`
-3. Install all dependencies
+5. Install all dependencies  
 `npm install`
-4. Run the application
+7. Run the application  
 `npm run dev`
-5. Go to http://localhost:5174/kopi-development/ to view the site
+9. Go to http://localhost:5174/kopi-development/ to view the site
 
 ## Bugs
 
