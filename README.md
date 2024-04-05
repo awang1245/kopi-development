@@ -7,7 +7,8 @@ In this project, I designed and developed a website for my imagined coffee brand
 Visit the deployed website: https://awang1245.github.io/kopi-development/  
 Learn more about the project: https://awang1245.github.io/anna-wang-portfolio/#/kopi-development
 
-## How to Run Program Locally
+
+## How to Run
 
 1. Clone the repository
 
@@ -34,6 +35,7 @@ npm run dev
 ```
 
 9. Go to http://localhost:5173/kopi-development/ to view the site
+
 
 ## Bugs
 
