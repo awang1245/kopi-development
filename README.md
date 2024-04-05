@@ -33,7 +33,7 @@ npm install
 npm run dev
 ```
 
-9. Go to http://localhost:5174/kopi-development/ to view the site
+9. Go to http://localhost:5173/kopi-development/ to view the site
 
 ## Bugs
 
