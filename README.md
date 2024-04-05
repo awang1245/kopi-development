@@ -10,7 +10,7 @@ Learn more about the project: https://awang1245.github.io/anna-wang-portfolio/#/
 ## How to Run Program Locally
 
 1. Clone the repository  
-`git clone https://github.com/awang1245/kopi-development.git`
+```git clone https://github.com/awang1245/kopi-development.git```
 3. Navigate into the project directory  
 `cd src`
 5. Install all dependencies  
